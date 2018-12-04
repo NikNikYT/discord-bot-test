@@ -33,6 +33,4 @@ async def on_message(message):
     if message.content.startswith('+coinflip'):
         randomlist = ["pladt","krone",]
         await client.send_message(message.channel,(random.choice(randomlist)))
-    if message.content == '+pingme':
-        await client.send_message(message.channel,'nej. <@%s>')
 client.run('NTE5NTcxMjc2MDYzNTcxOTc4.DuhQEQ.5a0bzrOR9DnvFv-vI34kwn9Zvfk')
