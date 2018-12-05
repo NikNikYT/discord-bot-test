@@ -34,4 +34,4 @@ async def on_message(message):
     if message.content.startswith('+er du god eller ond'):
         randomlist = ["ja","nej","hvem ved","måske","hey se der er en fugl",]
         await client.send_message(message.channel,(random.choice(randomlist)))
-client.run(os.getenv('Token'))
+client.run(os.getenv('TOKEN'))
