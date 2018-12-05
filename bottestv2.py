@@ -55,4 +55,4 @@ async def resume(ctx):
     id = ctx.message.server.id
     players[id].resume()
 
-client.run(os.getenv'TOKEN'))
+client.run(os.getenv('TOKEN'))
