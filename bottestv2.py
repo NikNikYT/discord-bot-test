@@ -35,4 +35,4 @@ async def on_message(message):
         randomlist = ["ja","nej","hvem ved","måske","hey se der er en fugl",]
     if message.content.startswith('+pingmebitch'):
         await client.send_message(message.channel,'its try me bitch <@%s>'  %(message.author.id))
-client.run(os.getenv('TOKEN')
+client.run(os.getenv('TOKEN'))
