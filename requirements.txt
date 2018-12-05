@@ -1,5 +1,2 @@
 discord.py[voice]
 youtube_dl
-asyncio
-PyNaCl
-opus
