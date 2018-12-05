@@ -12,6 +12,7 @@ players = {}
 
 client = commands.Bot(command_prefix = '+')
 Clientdiscord = discord.Client()
+client.remove_command('help')
 
 
 @client.event
@@ -54,5 +55,33 @@ async def stop(ctx):
 async def resume(ctx):
     id = ctx.message.server.id
     players[id].resume()
+
+@client.command()
+async def ping():
+    await client.say("pong")
+
+@client.command()
+async def pong():
+    await client.say("ping")
+
+@client.command(pass_context=True)
+async def help(ctx):
+    author = ctx.message.author
+
+    embed = discord.Embed(
+          colour = discord.Colour.blue()
+    )
+
+    embed.set_author(name="help")
+    embed.add_field(name="+ping", value="Returns Pong!", inline=False)
+    embed.add_field(name="+pong", value="Returns Ping!", inline=False)
+    embed.add_field(name="+join", value="joins the voice channel you are in", inline=False)
+    embed.add_field(name="+leave", value="leaves the voice channel", inline=False)
+    embed.add_field(name="+play [Youtube link]", value="plays the music you put in [virker ikke]", inline=False)
+    embed.add_field(name="+pause", value="pauses the music [virker ikke]", inline=False)
+    embed.add_field(name="+resume", value="resumes the music [virker ikke]", inline=False)
+    embed.add_field(name="+stop", value="stops the music completly [virker ikke]", inline=False)
+
+    await client.send_message(author, embed=embed)
 
 client.run(os.getenv('TOKEN'))
