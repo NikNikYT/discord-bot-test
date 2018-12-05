@@ -31,12 +31,13 @@ async def on_message(message):
         em = discord.Embed(description='where is my $40 bill XD')
         em.set_image(url='https://i.imgflip.com/2o1kfo.jpg')
         await client.send_message(message.channel, embed=em)
-    if message.content.startswith('+er du god eller ond'):
-        randomlist = ["ja","nej","hvem ved","måske","hey se der er en fugl",]
     if message.content.startswith('+pingmebitch'):
         await client.send_message(message.channel,'its try me bitch <@%s>'  %(message.author.id))
     if ('fuck dig bitch') in message.content:
        await client.delete_message(message)
-    if message.content == '+fav sang':
+    if message.content == 'hvad er niknik's fav sang':
         await client.send_message(message.channel,'https://www.youtube.com/watch?v=-yHoa4MR0W4 her')
+    if message.content.startswith('+8ball'):
+        randomlist = ["du er heldig resten af dagen","du kommer til at dø ung","vidste du vis du spiser for meget kage så bliver du fed?","10 minuter mere mor.","prøv senere","jeg har en mega hovedet pine så gå plz","shaun mendes er grim XD","måske","hvem ved","sikkert","er ikke sikker"]
+        await client.send_message(message.channel,(random.choice(randomlist)))
 client.run(os.getenv('TOKEN'))
