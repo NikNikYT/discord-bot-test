@@ -7,52 +7,6 @@ import os
 import random
 import youtube_dl
 from discord import Game
-import opus
-OPUS_LIBS = ['libopus-0.x86.dll', 'libopus-0.x64.dll',
-             'libopus-0.dll', 'libopus.so.0', 'libopus.0.dylib']
-
-
-def load_opus_lib(opus_libs=OPUS_LIBS):
-    if opus.is_loaded():
-        return True
-
-    for opus_lib in opus_libs:
-            try:
-                opus.load_opus(opus_lib)
-                return
-            except OSError:
-                pass
-
-    raise RuntimeError('Could not load an opus lib. Tried %s' %
-                       (', '.join(opus_libs)))
-opts = {
-    'default_search': 'auto',
-    'quiet': True,
-}  # youtube_dl options
-
-
-
-load_opus_lib()
-
-servers_songs={}
-player_status={}
-now_playing={}
-song_names={}
-paused={}
-
-async def set_player_status():
-    for i in bot.servers:
-        player_status[i.id]=False
-        servers_songs[i.id]=None
-        paused[i.id]=False
-        song_names[i.id]=[]
-    print(200)
-
-
-
-async def bg():
-    bot.loop.create_task(set_player_status())
-
 
 players = {}
 
@@ -101,4 +55,4 @@ async def resume(ctx):
     id = ctx.message.server.id
     players[id].resume()
 
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv'TOKEN'))
