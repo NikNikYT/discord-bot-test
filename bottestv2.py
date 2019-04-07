@@ -109,6 +109,9 @@ async def help(ctx):
           colour = discord.Colour.blue()
     )
 
+    #hey dickhead don't steal my stuff thanks :)
+    #created by Niknik or a random person#4629
+    
     embed.set_author(name="help")
     embed.add_field(name="+ping", value="Returns Pong!", inline=False)
     embed.add_field(name="+pong", value="Returns Ping!", inline=False)
